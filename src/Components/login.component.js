@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import Navbar from "react-bootstrap/Navbar";
+// import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import './register.css';
 import {
     MDBContainer,
     MDBTabs,
@@ -13,7 +17,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function App() {
+function Login() {
 
     const [justifyActive, setJustifyActive] = useState('tab1');;
 
@@ -25,8 +29,30 @@ function App() {
         setJustifyActive(value);
     };
 
-    return ( <
-        MDBContainer className = "p-3 my-5 d-flex flex-column w-50" >
+    return ( < div className = 'LoginPage' >
+        <
+        header className = "nav-header" >
+        <
+        Navbar collapseOnSelect expand = "lg"
+        className = "navbar" >
+        <
+        Container > {
+            /* <
+                    img src = { 'Lungs' }
+                    width = "50"
+                    height = "50"
+                    className = "d-inline align-left"
+                    alt = "LungTech logo" / > */
+        } <
+        span className = "nav-tag" > LungTech < /span> 
+
+        <
+        /Container > < /
+        Navbar > <
+        /header > <
+        h1 > Welcome To LungTech < /h1> <
+        h6 > World Of Virtual Cancer Detection For You < /h6> <
+        MDBContainer className = "LoginContainer p-3 my-5 d-flex flex-column w-50" >
 
         <
         MDBTabs pills justify className = 'mb-3 d-flex flex-row justify-content-between' >
@@ -262,8 +288,9 @@ function App() {
         /MDBTabsContent>
 
         <
-        /MDBContainer>
+        /MDBContainer> </
+        div >
     );
 }
 
-export default App;
+export default Login;
